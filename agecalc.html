@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Age Calculator</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    img{
+        width: 15%;
+        height: 30%;
+        margin: 30px;
+    }
+  </style>
+  <script>
+    function CalculateAge(){
+        var dob = document.getElementById("dob").value;
+        var td = document.getElementById("td").value;
+        var dobobject = new Date(dob);
+        var tdobject = new Date(td);
+        var tm = tdobject.getMonth();
+        var ty = tdobject.getFullYear();
+        var td = tdobject.getDay();
+        var bm = dobobject.getMonth();
+        var by = dobobject.getFullYear();
+        var bd = dobobject.getDay();
+        var apoxage = ty - by;
+        if (bm > tm || ((bd > td) && (bm == tm))) {
+            apoxage = apoxage - 1;
+        }
+        document.getElementById("ANS").innerHTML = apoxage;
+
+    }
+  </script>
+    </head>
+    <body>
+        <div class="container bg-info">
+            <h1>Age Calculator</h1>
+            <img src="Assets/aecalc.png" alt="">
+            <br>
+            <label for="">Enter your date of birth</label>
+            <input type="date" name="dd" id="dob">
+            <br>
+            <label for="">Enter today's date</label>
+            <input type="date" name="dd" id="td">
+            <br>
+            <button class="btn btn-primary" onclick="CalculateAge()">Calculate Age</button>
+            <br>
+            <h3 id="ANS"></h3>
+        </div>
+    </body>
+</html>

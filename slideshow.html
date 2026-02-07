@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Tourist Slideshow Bootstrap</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .image{
+        width: 16%;
+        height: 20%;
+        opacity: 0.5;
+        display: inline;
+    }
+    .image:hover{
+        opacity: 1;
+    }
+    #main{
+        width: 95%;
+        height: 80%;
+    }
+  </style>
+  <script>
+    function ChangeSlide(img_id){
+        document.getElementById("main").src = "Assets/" + img_id + ".jpg";
+    }
+  </script>
+    </head>
+    <body>
+        <h1>Top Tourist Attractions!</h1>
+        <div id="slideshow">
+            <h2>Slideshow</h2>
+            <img id="main" src="Assets/tourist.jpg" alt="">
+        </div>
+        <div id="images">
+            <img class="image" id="paris" src="Assets/paris.jpg" alt="" onclick="ChangeSlide('paris')">
+            <img class="image" id="greece" src="Assets/greece.jpg" alt="" onclick="ChangeSlide('greece')">
+            <img class="image" id="moscow" src="Assets/moscow.jpg" alt="" onclick="ChangeSlide('moscow')">
+            <img class="image" id="newyorker" src="Assets/newyorker.jpg" alt="" onclick="ChangeSlide('newyorker')">
+            <img class="image" id="glasgow" src="Assets/glasgow.jpg" alt="" onclick="ChangeSlide('glasgow')">
+            <img class="image" id="chicago" src="Assets/chicago.jpg" alt="" onclick="ChangeSlide('chicago')">
+        </div>
+    </body>
+</html>
